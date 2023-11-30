@@ -1,0 +1,31 @@
+{% load static %} 
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favoritos</title>
+    <link href="{% static 'bs530/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    {% block extra_css %}
+
+    {% endblock %}
+
+
+  </head>
+
+  <body>
+    
+    {% block main %}           <!-- CONTENEDOR PRINCIPAL -->
+    {% endblock  %} 
+
+    <script src="{% static 'bs530/js/bootstrap.bundle.min.js' %}"></script>
+
+    {% block extra_js %}           <!-- CONTENEDOR PRINCIPAL -->
+    {% endblock  %} 
+
+  </body>
+</html>
+
+

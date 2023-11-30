@@ -1,0 +1,61 @@
+
+{% extends "base_bs5.html" %}
+
+{% block main %}
+
+<h1>{{ titulo }}</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Lista de favoritos</h1>
+            <p>
+                <a href="{% url 'favoritos:crear' %}" class="btn btn-outline-primary">Agregar</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            nombre
+                        </th>
+                        <th>
+                            apellido
+                        </th>
+                        <th>
+                            URL
+                        </th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Creamos una lista con for, con las lineas de abajo le agregamos "url" a cada elemento-->
+                    {% for favorito in favoritos_lista %}   
+                    <tr>
+                        <td valign="middle">{{ favorito.nombre }}</td>
+                        <td valign="middle">{{ favorito.apellido }}</td>
+                        <td valign="middle">{{ favorito.url }}</td>
+                        <td>
+                            <a href="{% url 'favoritos:borrar' favorito.pk %}" class="btn btn-outline-danger mb-2">Borrar</a>
+                            <!--<a href="/borrar/{{ favorito.pk }}">Borrar</a> otra forma mas bonita es href="{% url 'favoritos:borrar' favorito.pk%}"-->
+                            <br>
+                            <a href="{% url 'favoritos:detalle' favorito.pk %}" class="btn btn-outline-info mb-2">Detalle</a>
+                            <br>
+                            <a href="{% url 'favoritos:actualizar' favorito.pk %}" class="btn btn-outline-primary mb-2">Actualizar</a>
+                        </td>
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    
+{% endblock main %}
+
+
+

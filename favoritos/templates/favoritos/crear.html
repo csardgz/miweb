@@ -1,0 +1,52 @@
+{% extends "base_bs5.html" %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <h1>{{ titulo }}</h1>
+
+            <form method="post">
+            
+                    {% csrf_token %}      <!-- Django lo lee y crea un token CSRF desde el backend-->
+                    {{ form.as_p }}             <!-- es en "views"/context la llave form// de esta manera accedemos a las variables de contexto en el template-->
+                    <input type="submit" class="btn btn-outline-info">
+            </form>
+            
+            <a href='{% url 'favoritos:lista' %}' class="btn btn-outline-primary">listas</a>
+            
+        </div>
+    </div>
+</div>
+
+
+    
+{% endblock main %}
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear</title>
+</head>
+<body>
+
+  
+    
+
+     FORMULARIO CAVERNICOLA 
+    <form method="post">         <!-- cada vez que se haga una peticion post, hay que mandar un csrf token
+        <label>Nombre</label>
+        <input type="text" name="nombre">
+        <label>url</label>
+        <input type="text" name="url">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>-->
