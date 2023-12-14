@@ -1,11 +1,10 @@
 from django.urls import path
 from favoritos.views import *
 
+
 app_name = 'favoritos'
 
 urlpatterns = [
-    path('',index_favoritos,name='index'),
-    
     path('lista', lista_favoritos,name='lista'),
     path('crear',crear_favoritos,name='crear'),
     path('borrar/<int:pk>', borrar_favoritos, name='borrar'),
