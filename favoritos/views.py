@@ -79,3 +79,4 @@ def actualizar_favorito(request,pk):
     context = {'form':form , 'titulo' : 'Actualizar'}
 
     return render(request, 'favoritos/crear.html', context)
+

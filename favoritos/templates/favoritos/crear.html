@@ -12,7 +12,7 @@
             
                     {% csrf_token %}      <!-- Django lo lee y crea un token CSRF desde el backend-->
                     {{ form.as_p }}             <!-- es en "views"/context la llave form// de esta manera accedemos a las variables de contexto en el template-->
-                    <input type="submit" class="btn btn-outline-info">
+                    <input type="submit" class="btn btn-outline-info" onclick="window.alert('Datos enviados')">
             </form>
             
             <a href='{% url 'favoritos:lista' %}' class="btn btn-outline-primary">listas</a>
