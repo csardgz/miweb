@@ -6,6 +6,7 @@ from django.urls import reverse
 # Create your views here.
 
 def index_favoritos(request):
+    
     return render(request, 'index.html')
 
 

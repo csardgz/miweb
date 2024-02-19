@@ -4,7 +4,7 @@ from .models import Favoritos
 class FavoritosSeralizer(serializers.ModelSerializer):
     class Meta:
         model = Favoritos
-        fields = ('id','nombre','apellido','url')
+        fields = ['nombre','apellido','url']
 
 
 
